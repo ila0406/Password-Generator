@@ -16,25 +16,25 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+// Talked with a ta after class. they said that that button is supposed to generate a prompt, enter whatever value that that prompt is asking for, then another prompt is generated until you get an answer for each upper, lower, length, etc. then after completing the final prompt thats when the password will generate
 function generatePassword() {
-  var count = prompt ("What length do you want your password to be?");
+  var count = prompt ("How many charcters do you need the password to be?");
+  var num = confirm ("Would you like to use numerical characters?");
   var special = confirm ("Would you like to use special charcters?");
-  var num = confirm ("Would you like to use numbers?");
-  var uLetters = confirm ("Would you like to use upper-case letters?");
-  var lLetters = confirm ("Would you like to use lower-case letters?");
+  var ucLetters = confirm ("Would you like to use upper-case letters?");
+  var lcLetters = confirm ("Would you like to use lower-case letters?");
 
-  if (special === true) {
-    passwordOptions = passwordOptions.concat(symbols);
-  }
   if (num === true) {
     passwordOptions = passwordOptions.concat(numbers);
   }
-  if (uLetters === true) {
-    passwordOptions = passwordOptions.concat(numbers);
+  if (special === true) {
+    passwordOptions = passwordOptions.concat(symbols);
   }
-  if (lLetters === true) {
-    passwordOptions = passwordOptions.concat(numbers);
+  if (ucLetters === true) {
+    passwordOptions = passwordOptions.concat(ucLetters);
+  }
+  if (lcLetters === true) {
+    passwordOptions = passwordOptions.concat(lcLetters);
   }
 
 }
@@ -48,14 +48,14 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-// let typesUsed = "abcdefghijklmnopqrs123456567890@#%#$^*(ASFHFGHJKYKYT"
-// let a = []
-// for (let i = 0; i < 10; i++) {
-//         let num = Math.floor(Math.random() * typesUsed.length)
-//         a.push(typesUsed[num]); 
+let typesUsed = "abcdefghijklmnopqrs123456567890@#%#$^*(ASFHFGHJKYKYT"
+let a = []
+for (let i = 0; i < 10; i++) {
+        let num = Math.floor(Math.random() * typesUsed.length)
+        a.push(typesUsed[num]); 
             
-//     }
-//     console.log(a.join("")) 
+    }
+    console.log(a.join("")) 
 
 
 // GIVEN I need a new, secure password
@@ -73,6 +73,3 @@ generateBtn.addEventListener("click", writePassword);
 // THEN a password is generated that matches the selected criteria
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
-
-
-    // Talked with a ta after class. they said that that button is supposed to generate a prompt, enter whatever value that that prompt is asking for, then another prompt is generated until you get an answer for each upper, lower, length, etc. then after completing the final prompt thats when the password will generate
