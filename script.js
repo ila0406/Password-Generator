@@ -24,17 +24,23 @@ function generatePassword() {
   var ucLetters = confirm ("Would you like to use upper-case letters?");
   var lcLetters = confirm ("Would you like to use lower-case letters?");
 
+  console.log(passwordOptions);
+
   if (num === true) {
     passwordOptions = passwordOptions.concat(numbers);
+    console.log(passwordOptions);
   }
   if (special === true) {
     passwordOptions = passwordOptions.concat(symbols);
+    console.log(passwordOptions);
   }
   if (ucLetters === true) {
-    passwordOptions = passwordOptions.concat(ucLetters);
+    passwordOptions = passwordOptions.concat(alphaLower);
+    console.log(passwordOptions);
   }
   if (lcLetters === true) {
-    passwordOptions = passwordOptions.concat(lcLetters);
+    passwordOptions = passwordOptions.concat(alphaUpper);
+    console.log(passwordOptions);
   }
 
 }
