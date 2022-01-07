@@ -1,5 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var count;
+var alphaLower = "abcdefghijklmnopqrstuvwxyz".split('');
+var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+var numbers = "0123456789".split('');
+var symbols = "!@#$%^&*_-+=".split('');
+var passwordOptions = [];
+
 
 // Write password to the #password input
 function writePassword() {
@@ -10,5 +17,62 @@ function writePassword() {
 
 }
 
+function generatePassword() {
+  var count = prompt ("What length do you want your password to be?");
+  var special = confirm ("Would you like to use special charcters?");
+  var num = confirm ("Would you like to use numbers?");
+  var uLetters = confirm ("Would you like to use upper-case letters?");
+  var lLetters = confirm ("Would you like to use lower-case letters?");
+
+  if (special === true) {
+    passwordOptions = passwordOptions.concat(symbols);
+  }
+  if (num === true) {
+    passwordOptions = passwordOptions.concat(numbers);
+  }
+  if (uLetters === true) {
+    passwordOptions = passwordOptions.concat(numbers);
+  }
+  if (lLetters === true) {
+    passwordOptions = passwordOptions.concat(numbers);
+  }
+
+}
+
+//Math Loop for generating random numbers
+//While loop for for loop
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+// let typesUsed = "abcdefghijklmnopqrs123456567890@#%#$^*(ASFHFGHJKYKYT"
+// let a = []
+// for (let i = 0; i < 10; i++) {
+//         let num = Math.floor(Math.random() * typesUsed.length)
+//         a.push(typesUsed[num]); 
+            
+//     }
+//     console.log(a.join("")) 
+
+
+// GIVEN I need a new, secure password
+// WHEN I click the button to generate a password
+// THEN I am presented with a series of prompts for password criteria
+// WHEN prompted for password criteria
+// THEN I select which criteria to include in the password
+// WHEN prompted for the length of the password
+// THEN I choose a length of at least 8 characters and no more than 128 characters
+// WHEN asked for character types to include in the password
+// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+// WHEN I answer each prompt
+// THEN my input should be validated and at least one character type should be selected
+// WHEN all prompts are answered
+// THEN a password is generated that matches the selected criteria
+// WHEN the password is generated
+// THEN the password is either displayed in an alert or written to the page
+
+
+    // Talked with a ta after class. they said that that button is supposed to generate a prompt, enter whatever value that that prompt is asking for, then another prompt is generated until you get an answer for each upper, lower, length, etc. then after completing the final prompt thats when the password will generate
