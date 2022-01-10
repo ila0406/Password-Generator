@@ -1,11 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var count;
+var length;
+//Individual arrays for different charcter types
 var alphaLower = "abcdefghijklmnopqrstuvwxyz".split('');
 var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
 var numbers = "0123456789".split('');
 var symbols = "!@#$%^&*_-+=".split('');
-var passwordOptions = [];
+//array to store all charcters user selected for password
+var passwordOptions = []; 
 
 
 // Write password to the #password input
@@ -18,50 +20,42 @@ function writePassword() {
 }
 // Talked with a ta after class. they said that that button is supposed to generate a prompt, enter whatever value that that prompt is asking for, then another prompt is generated until you get an answer for each upper, lower, length, etc. then after completing the final prompt thats when the password will generate
 function generatePassword() {
-  var count = prompt ("How many charcters do you need the password to be?");
-  var num = confirm ("Would you like to use numerical characters?");
+  var length = prompt ("How many charcters do you need the password to be?");
+  var charCount = confirm ("Would you like to use numerical characters?");
   var special = confirm ("Would you like to use special charcters?");
-  var ucLetters = confirm ("Would you like to use upper-case letters?");
-  var lcLetters = confirm ("Would you like to use lower-case letters?");
+  var upperCase = confirm ("Would you like to use upper-case letters?");
+  var lowerCase = confirm ("Would you like to use lower-case letters?");
 
-  console.log(passwordOptions);
-
-  if (num === true) {
+  if (charCount === true) {
     passwordOptions = passwordOptions.concat(numbers);
-    console.log(passwordOptions);
   }
   if (special === true) {
     passwordOptions = passwordOptions.concat(symbols);
-    console.log(passwordOptions);
   }
-  if (ucLetters === true) {
-    passwordOptions = passwordOptions.concat(alphaLower);
-    console.log(passwordOptions);
-  }
-  if (lcLetters === true) {
+  if (upperCase === true) {
     passwordOptions = passwordOptions.concat(alphaUpper);
-    console.log(passwordOptions);
   }
+  if (lowerCase === true) {
+    passwordOptions = passwordOptions.concat(alphaLower);
+  }
+  console.log(passwordOptions);
+
+  // var newPassword = (length, passwordOptions) => {
+  //   var password = "";
+  //   for (var i = 0; i < length; i++) {
+  //     password += passwordOptions.charAt(
+  //       Math.floor(Math.random() * passwordOptions.length)
+  //     );
+  //   }
+  //   return password;
+  // };
+
+  return "Hello";
 
 }
 
-//Math Loop for generating random numbers
-//While loop for for loop
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-let typesUsed = "abcdefghijklmnopqrs123456567890@#%#$^*(ASFHFGHJKYKYT"
-let a = []
-for (let i = 0; i < 10; i++) {
-        let num = Math.floor(Math.random() * typesUsed.length)
-        a.push(typesUsed[num]); 
-            
-    }
-    console.log(a.join("")) 
 
 
 // GIVEN I need a new, secure password
