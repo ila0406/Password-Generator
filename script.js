@@ -46,6 +46,9 @@ function generatePassword() {
       if (lowerCase === true) {
         passwordOptions = passwordOptions.concat(alphaLower);
       }
+      if (charCount === false && special === false && upperCase === false && lowerCase === false) {
+        return ("Password Generation failed! At least 1 charcter type needs to be selected.")
+      }
 
       // Test: Ouput of array after confirms are answered 
       // console.log(passwordOptions);
