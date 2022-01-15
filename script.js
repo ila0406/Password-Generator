@@ -65,9 +65,10 @@ function generatePassword() {
       return result;
     }
     else {
+      // Return error when 
       return ("Password Generation failed! Please choose a valid number of characters and try again.");
     }
 }
 
-// Add event listener to generate button
+// Event listener to generate button
 generateBtn.addEventListener("click", writePassword);
